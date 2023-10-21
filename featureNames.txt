@@ -1,0 +1,7 @@
+#MediaPlayback
+Printing-Foundation-InternetPrinting-Client
+# leave SearchEngine-Client-Package - it is used by Indexing Control Panel
+#SearchEngine-Client-Package
+WCF-TCP-PortSharing45
+WindowsMediaPlayer
+WorkFolders-Client

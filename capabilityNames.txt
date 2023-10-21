@@ -1,0 +1,25 @@
+#all capabilities are commented out - as removing them gives the error and does nothing
+#App.StepsRecorder
+#Browser.InternetExplorer
+#Hello.Face
+#Language.Handwriting
+#Language.OCR
+#Language.Speech
+#Language.TextToSpeech
+#MathRecognizer
+#Media.WindowsMediaPlayer
+#Microsoft.Wallpapers.Extended
+#Microsoft.Windows.Ethernet.Client.Intel
+#Microsoft.Windows.Ethernet.Client.Realtek
+#Microsoft.Windows.Ethernet.Client.Vmware
+#Microsoft.Windows.PowerShell.ISE
+#Microsoft.Windows.Wifi.Client.Broadcom
+#Microsoft.Windows.Wifi.Client.Intel
+#Microsoft.Windows.Wifi.Client.Marvel
+#Microsoft.Windows.Wifi.Client.Qualcomm
+#Microsoft.Windows.Wifi.Client.Ralink
+#Microsoft.Windows.Wifi.Client.Realtek
+#Microsoft.Windows.WordPad
+#OneCoreUAP.OneSync
+#OpenSSH.Client
+#Windows.Kernel.LA57

@@ -1,0 +1,58 @@
+Clipchamp.Clipchamp
+# numeric value is Cortana
+Microsoft.549981C3F5F10
+Microsoft.BingNews
+Microsoft.BingWeather
+#Microsoft.DesktopAppInstaller
+Microsoft.GamingApp
+Microsoft.GetHelp
+Microsoft.Getstarted
+# photography HEIF image support
+#Microsoft.HEIFImageExtension
+#Microsoft.HEVCVideoExtension
+Microsoft.MicrosoftOfficeHub
+Microsoft.MicrosoftSolitaireCollection
+Microsoft.MicrosoftStickyNotes
+#Microsoft.Paint
+Microsoft.People
+Microsoft.PowerAutomateDesktop
+# photography RAW image support
+#Microsoft.RawImageExtension
+Microsoft.ScreenSketch
+# SecHealthUI is a Windows Defender - keep it
+#Microsoft.SecHealthUI
+#Microsoft.StorePurchaseApp
+Microsoft.Todos
+#Microsoft.UI.Xaml
+#Microsoft.VCLibs
+# Media file handlers
+#Microsoft.VP9VideoExtensions
+#Microsoft.WebMediaExtensions
+#Microsoft.WebpImageExtension
+# Photos can be replaced by many free better alternatives - IrfanView, XnViewMP
+Microsoft.Windows.Photos
+Microsoft.WindowsAlarms
+# we keep calc and camera
+#Microsoft.WindowsCalculator
+#Microsoft.WindowsCamera
+microsoft.windowscommunicationsapps
+Microsoft.WindowsFeedbackHub
+Microsoft.WindowsMaps
+# we keep Notepad and SoundRecorder
+#Microsoft.WindowsNotepad
+#Microsoft.WindowsSoundRecorder
+# Windows Store and Pay can be removed, but many apps rely on them. Decide yourslef.
+#Microsoft.WindowsStore
+# Terminal has some issues - will not allow multiline pastes without warning etc
+#Microsoft.WindowsTerminal
+# keep it if you are on XBox
+Microsoft.Xbox
+# nobody has Windows Phone anymore
+Microsoft.YourPhone
+# nobody has ZunePlayer anymore
+Microsoft.ZuneMusic
+Microsoft.ZuneVideo
+MicrosoftCorporationII.MicrosoftFamily
+MicrosoftCorporationII.QuickAssist
+# WebExperience (and widgets with them) will get reinstalled by Windows Update
+#MicrosoftWindows.Client.WebExperience
