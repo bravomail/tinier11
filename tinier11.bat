@@ -11,6 +11,9 @@ set "ESC="
 title tinier11 builder
 @echo.Welcome to the tinier11 image creator!
 
+@rem use script's directory for all temporary files/dirs
+cd /D %~dp0
+
 @rem Check if there is oscdimg.exe in PATH
 where oscdimg.exe >NUL || (call :showerror "OsCdImg.exe is not found in PATH. Get it from Windows ADK and put into script dir or any other dir in PATH." & goto Stop)
 
@@ -30,9 +33,6 @@ call :showerror "Can't find %DriveLetter%\sources\boot.wim or install.wim. Pleas
 :bootWimFound
 @rem verify if install.wim exists on a chosen Windows ISO path
 if not exist "%DriveLetter%\sources\install.wim" goto noWimFileFound
-
-@rem use script's directory for all temporary files/dirs
-cd /D %~dp0
 
 @rem pre-cleanup of temp dirs
 rd /s /q tinier11 2>NUL
