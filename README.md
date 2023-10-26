@@ -40,6 +40,7 @@ and put into the same directory as bat file (or into one of may PATH locations).
 1. Windows 11 autounattend.xml file is not compatible with Windows 10. So I created a separate autounattend.xml file for Windows 10.
 2. Although Edge is removed, the icon and a ghost of its taskbar pin are still available. Also, there are some remnants in the Settings. But the app in itself is deleted.
 3. Windows Update sometimes manages to reinstall a lot of things - MS Edge, WebExperience etc. They can be manually removed. Let me know if there is a way to permanently block their installation.
+4. Windows 10 x86 (32 bit) is not compatible with autounattend.xml - I'm working to get the working one. Meanwhile - just remove autounattend.xml from script dir if you are on x86 Windows 10.
 
 ## Improvements compared to tiny11
 Removed hard dependencies on Windows build number.
