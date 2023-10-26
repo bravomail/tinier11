@@ -9,24 +9,31 @@ Microsoft.GetHelp
 Microsoft.Getstarted
 # photography HEIF image support
 #Microsoft.HEIFImageExtension
+Microsoft.Microsoft3DViewer
 #Microsoft.HEVCVideoExtension
 Microsoft.MicrosoftOfficeHub
 Microsoft.MicrosoftSolitaireCollection
 Microsoft.MicrosoftStickyNotes
 #Microsoft.Paint
+#Microsoft.MSPaint
+Microsoft.Office.OneNote
 Microsoft.People
 Microsoft.PowerAutomateDesktop
 # photography RAW image support
 #Microsoft.RawImageExtension
 Microsoft.ScreenSketch
+Microsoft.SkypeApp
 # SecHealthUI is a Windows Defender - keep it
 #Microsoft.SecHealthUI
 #Microsoft.StorePurchaseApp
 Microsoft.Todos
 #Microsoft.UI.Xaml
+# Visual C++ Libs - we keep
 #Microsoft.VCLibs
 # Media file handlers
 #Microsoft.VP9VideoExtensions
+# windows store related
+#Microsoft.Wallet
 #Microsoft.WebMediaExtensions
 #Microsoft.WebpImageExtension
 # Photos can be replaced by many free better alternatives - IrfanView, XnViewMP
