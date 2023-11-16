@@ -32,10 +32,13 @@ set "DriveLetter=%DriveLetter%:"
 @rem verify if boot.wim exists on a chosen Windows ISO path
 if exist "%DriveLetter%\sources\boot.wim" goto bootWimFound
 
+call :showerror "Can't find %DriveLetter%\sources\boot.wim. Please enter the correct DVD Drive Letter."
+@goto :Stop
+
 :noWimFileFound
 if exist "%DriveLetter%\sources\install.esd" goto installFound
 
-call :showerror "Can't find %DriveLetter%\sources\boot.wim or install.wim. Please enter the correct DVD Drive Letter."
+call :showerror "Can't find %DriveLetter%\sources\install.wim or install.esd. Please enter the correct DVD Drive Letter."
 @goto :Stop
 
 :bootWimFound
