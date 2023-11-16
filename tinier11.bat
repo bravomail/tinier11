@@ -11,6 +11,9 @@ set "ESC="
 title tinier11 builder
 @echo.Welcome to the tinier11 image creator!
 
+@rem use script's directory for all temporary files/dirs
+cd /D %~dp0
+
 @rem Check if there is oscdimg.exe in PATH
 where oscdimg.exe >NUL || (call :showerror "OsCdImg.exe is not found in PATH. Get it from Windows ADK and put into script dir or any other dir in PATH." & goto Stop)
 
@@ -23,17 +26,20 @@ set "DriveLetter=%DriveLetter%:"
 @rem verify if boot.wim exists on a chosen Windows ISO path
 if exist "%DriveLetter%\sources\boot.wim" goto bootWimFound
 
+call :showerror "Can't find %DriveLetter%\sources\boot.wim. Please enter the correct DVD Drive Letter."
+@goto :Stop
+
 :noWimFileFound
-call :showerror "Can't find %DriveLetter%\sources\boot.wim or install.wim. Please enter the correct DVD Drive Letter."
+if exist "%DriveLetter%\sources\install.esd" goto installFound
+
+call :showerror "Can't find %DriveLetter%\sources\install.wim or install.esd. Please enter the correct DVD Drive Letter."
 @goto :Stop
 
 :bootWimFound
 @rem verify if install.wim exists on a chosen Windows ISO path
 if not exist "%DriveLetter%\sources\install.wim" goto noWimFileFound
 
-@rem use script's directory for all temporary files/dirs
-cd /D %~dp0
-
+:installFound
 @rem pre-cleanup of temp dirs
 rd /s /q tinier11 2>NUL
 rd  /s /q scratchdir 2>NUL
@@ -46,11 +52,33 @@ xcopy.exe /E /I /H /R /Y /J %DriveLetter% .\tinier11 >nul || ( call :showerror "
 @rem clean dism log
 del /f /q %windir%\Logs\DISM\dism.log %windir%\Logs\DISM\DismAppx.log >NUL
 
+@rem Check if we have to export from ESD compressed version
+if exist "%DriveLetter%\sources\install.wim" goto imageReady 
+
+@echo.install.wim needs exporting from install.esd file...
+@echo.
+dism /Get-WimInfo /wimFile:%~dp0tinier11\sources\install.esd || (call :showerror "Dism /Get-WimInfo failed. You should run this script as an Administrator. Check the error above." & goto Stop )
+@echo.
+@rem Choose a Windows version, enter only the number:
+set SrcIdx=
+set /p SrcIdx=Please enter the image index:
+set "SrcIdx=%SrcIdx%"
+set "index=1"
+@echo.
+
+dism /Export-image /SourceImageFile:%~dp0tinier11\sources\install.esd /SourceIndex:%SrcIdx% /DestinationImageFile:%~dp0tinier11\sources\install.wim /Compress:max /CheckIntegrity
+
+del /f /q %~dp0tinier11\sources\install.esd
+goto goTime
+
+:imageReady
 @echo.Getting image information:
 dism /Get-WimInfo /wimfile:%~dp0tinier11\sources\install.wim || (call :showerror "Dism /Get-WimInfo failed. You should run this script as an Administrator. Check the error above." & goto Stop )
 set index=
 set /p index=Please enter the image index:
 set "index=%index%"
+
+:goTime
 @echo.Mounting Windows image. This may take a while.
 @echo.
 md %~dp0scratchdir

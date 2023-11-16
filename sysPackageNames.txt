@@ -6,38 +6,38 @@ psedo-tinier11-MsEdgeUpdate
 #psedo-tinier11-MsEdgeWebView
 psedo-tinier11-MsOneDrive
 # ============= end of pseudo packages =========
-#Microsoft-OneCore-DirectX-Database-FOD-Package
-#Microsoft-Windows-Client-LanguagePack-Package
-#Microsoft-Windows-LanguageFeatures-Basic-en-us-Package
-# .Net3 is still very useful for many apps
-#Microsoft-Windows-NetFx3-OnDemand-Package
-# replace Notepad with Notepad2-mod or Notepad++
-# but on a bare system Notepad is still useful
-#Microsoft-Windows-Notepad-System-FoD-Package
-#Microsoft-Windows-Printing-PMCPPC-FoD-Package
-#Microsoft-Windows-WMIC-FoD-Package
-Microsoft-OneCore-ApplicationModel-Sync-Desktop-FOD-Package
+Microsoft-OneCore-ApplicationModel-Sync-Desktop
+#Microsoft-OneCore-DirectX
+#Microsoft-Windows-Client-LanguagePack
+#Microsoft-Windows-FodMetadata
+#Microsoft-Windows-Foundation
+Microsoft-Windows-Hello-Face
+Microsoft-Windows-InternetExplorer
+# if you have terabytes of RAM - keep LA57
+Microsoft-Windows-Kernel-LA57-FoD
+#Microsoft-Windows-LanguageFeatures-Basic
+Microsoft-Windows-LanguageFeatures-Handwriting
+Microsoft-Windows-LanguageFeatures-OCR
+Microsoft-Windows-LanguageFeatures-Speech
+Microsoft-Windows-LanguageFeatures-TextToSpeech
+#Microsoft-Windows-MSPaint
+Microsoft-Windows-MediaPlayer
+#Microsoft-Windows-NetFx3
+#Microsoft-Windows-Notepad
+Microsoft-Windows-PowerShell-ISE
+#Microsoft-Windows-Printing-PMCPPC-FoD
+#Microsoft-Windows-Printing-WFS
+Microsoft-Windows-QuickAssist
+Microsoft-Windows-StepsRecorder
+Microsoft-Windows-TabletPCMath
+#Microsoft-Windows-UserExperience-Desktop
+#Microsoft-Windows-WMIC-FoD
+Microsoft-Windows-Wallpaper-Content-Extended-FoD
+Microsoft-Windows-WordPad
 # extra drivers - not needed
 Microsoft-Windows-Ethernet-Client
 Microsoft-Windows-Ethernet-Client-Intel
 Microsoft-Windows-Ethernet-Client-Realtek
-# do you want your face uploaded to MS servers?
-Microsoft-Windows-Hello-Face-Package
-# InternetExplorer is outdated, unsupported and a security risk
-Microsoft-Windows-InternetExplorer-Optional-Package
-# if you have terabytes of RAM - keep LA57
-Microsoft-Windows-Kernel-LA57-FoD-Package
-# LanguageFeatures tend to be reinstalled back by Windows.
-Microsoft-Windows-LanguageFeatures-Handwriting-en-us-Package
-Microsoft-Windows-LanguageFeatures-OCR-en-us-Package
-Microsoft-Windows-LanguageFeatures-Speech-en-us-Package
-Microsoft-Windows-LanguageFeatures-TextToSpeech-en-us-Package
-# get VLC for MediaPlayer
-Microsoft-Windows-MediaPlayer-Package
-Microsoft-Windows-PowerShell-ISE-FOD-Package
-Microsoft-Windows-StepsRecorder-Package
-Microsoft-Windows-TabletPCMath-Package
-Microsoft-Windows-Wallpaper-Content-Extended-FoD-Package
 # Wifi clients are probably useful, decide if you want to keep them.
 Microsoft-Windows-Wifi-Client-Broadcom
 Microsoft-Windows-Wifi-Client-Intel
@@ -45,7 +45,5 @@ Microsoft-Windows-Wifi-Client-Marvel
 Microsoft-Windows-Wifi-Client-Qualcomm
 Microsoft-Windows-Wifi-Client-Ralink
 Microsoft-Windows-Wifi-Client-Realtek
-# Wordpad is useless, get any free doc editor like AbiWord
-Microsoft-Windows-WordPad-FoD-Package
 # get Git-Bash, Putty, WinSCP if you like OpenSSH
-OpenSSH-Client-Package
+OpenSSH-Client

@@ -1,7 +1,17 @@
-#MediaPlayback
+#Printing-PrintToPDFServices-Features
+#Windows-Defender-Default-Definitions
+#Printing-XPSServices-Features
+#MSRDC-Infrastructure
+#Printing-Foundation-Features
 Printing-Foundation-InternetPrinting-Client
 # leave SearchEngine-Client-Package - it is used by Indexing Control Panel
 #SearchEngine-Client-Package
+#MicrosoftWindowsPowerShellV2Root
+#MicrosoftWindowsPowerShellV2
+#NetFx4-AdvSrvs
+#WCF-Services45
 WCF-TCP-PortSharing45
+#MediaPlayback
 WindowsMediaPlayer
 WorkFolders-Client
+Internet-Explorer-Optional-x86
