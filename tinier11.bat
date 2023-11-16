@@ -54,11 +54,11 @@ if exist "%DriveLetter%\sources\install.wim" goto imageReady
 
 @echo.install.wim needs exporting from install.esd file...
 @echo.
-dism /Get-WimInfo /wimFile:%~dp0tinier11\sources\install.esd
+dism /Get-WimInfo /wimFile:%~dp0tinier11\sources\install.esd || (call :showerror "Dism /Get-WimInfo failed. You should run this script as an Administrator. Check the error above." & goto Stop )
 @echo.
 @rem Choose a Windows version, enter only the number:
 set SrcIdx=
-set /p SrcIdx=Please enter the number for the Windows version to export:
+set /p SrcIdx=Please enter the image index:
 set "SrcIdx=%SrcIdx%"
 set "index=1"
 @echo.
