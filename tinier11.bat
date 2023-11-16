@@ -27,6 +27,8 @@ set "DriveLetter=%DriveLetter%:"
 if exist "%DriveLetter%\sources\boot.wim" goto bootWimFound
 
 :noWimFileFound
+if exist "%DriveLetter%\sources\install.esd" goto installFound
+
 call :showerror "Can't find %DriveLetter%\sources\boot.wim or install.wim. Please enter the correct DVD Drive Letter."
 @goto :Stop
 
@@ -34,6 +36,7 @@ call :showerror "Can't find %DriveLetter%\sources\boot.wim or install.wim. Pleas
 @rem verify if install.wim exists on a chosen Windows ISO path
 if not exist "%DriveLetter%\sources\install.wim" goto noWimFileFound
 
+:installFound
 @rem pre-cleanup of temp dirs
 rd /s /q tinier11 2>NUL
 rd  /s /q scratchdir 2>NUL
@@ -46,11 +49,33 @@ xcopy.exe /E /I /H /R /Y /J %DriveLetter% .\tinier11 >nul || ( call :showerror "
 @rem clean dism log
 del /f /q %windir%\Logs\DISM\dism.log %windir%\Logs\DISM\DismAppx.log >NUL
 
+@rem Check if we have to export from ESD compressed version
+if exist "%DriveLetter%\sources\install.wim" goto imageReady 
+
+@echo.install.wim needs exporting from install.esd file...
+@echo.
+dism /Get-WimInfo /wimFile:%~dp0tinier11\sources\install.esd
+@echo.
+@rem Choose a Windows version, enter only the number:
+set SrcIdx=
+set /p SrcIdx=Please enter the number for the Windows version to export:
+set "SrcIdx=%SrcIdx%"
+set "index=1"
+@echo.
+
+dism /Export-image /SourceImageFile:%~dp0tinier11\sources\install.esd /SourceIndex:%SrcIdx% /DestinationImageFile:%~dp0tinier11\sources\install.wim /Compress:max /CheckIntegrity
+
+del /f /q %~dp0tinier11\sources\install.esd
+goto goTime
+
+:imageReady
 @echo.Getting image information:
 dism /Get-WimInfo /wimfile:%~dp0tinier11\sources\install.wim || (call :showerror "Dism /Get-WimInfo failed. You should run this script as an Administrator. Check the error above." & goto Stop )
 set index=
 set /p index=Please enter the image index:
 set "index=%index%"
+
+:goTime
 @echo.Mounting Windows image. This may take a while.
 @echo.
 md %~dp0scratchdir
